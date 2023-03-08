@@ -1,0 +1,61 @@
+/* Log page */
+.error-detail-table.border-1 {border-collapse: collapse; border: 1px #cecccc solid;}
+.error-detail-table td {padding: 5px; vertical-align: top;}
+.error-detail-table td:first-child {text-align: right; color: #607d8b;}
+.error-detail-table pre {margin: 0;}
+.error-detail-table .error-dump pre {display: none;}
+.error-detail-table .error-dump.show pre {display: block;}
+.internal-error {color: red;}
+.error-level-critical {color: #f800e3;}
+.error-level-error {color: #ff0018;}
+.error-level-warning {color: #ffb900;}
+.error-level-notice {color: #28a745;}
+.error-level-info {color: #17a2b8;}
+.error-level-alert {color: #2196f3;}
+.error-level-debug {color: #6c757d;}
+
+/* Setting page */
+.switch-btn {
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    border-radius: 19px;
+    background: #bfbfbf;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms;
+}
+.switch-btn::after {
+    content: "";
+    height: 14px;
+    width: 14px;
+    border-radius: 17px;
+    background: #fff;
+    top: 3px;
+    left: 3px;
+    transition-duration: 300ms;
+    position: absolute;
+    z-index: 1;
+}
+.switch-on {
+    background: #4caf50;
+}
+.switch-on::after {
+    left: 16px;
+}
+.ex-container .gray {
+    color: gray;
+}
+.adm-detail-content-cell-l {
+    width: 45%;
+}
+.ex-container .va-top {
+    vertical-align: top;
+}
+.ex-container select {
+    min-width: 200px;
+}

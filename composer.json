@@ -1,0 +1,22 @@
+{
+    "name": "rdn/rdn.error",
+    "description": "RDN Error",
+    "type": "bitrix-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "iextra",
+            "email": "iextra.denis@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0",
+        "composer/installers": "~2"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
