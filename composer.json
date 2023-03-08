@@ -9,7 +9,6 @@
             "email": "iextra.denis@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "php": ">=8.0",
         "composer/installers": "~2"
