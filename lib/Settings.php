@@ -13,10 +13,11 @@ class Settings
     public const ADMIN_NOTICE = 'ADMIN_NOTICE';
     public const TELEGRAM_NOTICE = 'TELEGRAM_NOTICE';
     public const EMAIL_NOTICE = 'EMAIL_NOTICE';
+    public const BACKTRACE_WITH_ARGS = 'BACKTRACE_WITH_ARGS';
+    public const NOT_UPDATE_RETRY_COUNT = 'NOT_UPDATE_RETRY_COUNT';
 
     protected const MODULE_ID = 'rdn.error';
     protected const SETTINGS_KEY = 'settings';
-    protected const CACHE_ID = 'settings';
 
     protected array $isEnabled = [];
     protected array $levelsNotSending = [];

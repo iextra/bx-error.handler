@@ -41,6 +41,12 @@ if (
         'EMAIL_NOTICE' => function ($value, Settings $settings) {
             $settings->setEnabled(Settings::EMAIL_NOTICE, (bool)$value);
         },
+        'BACKTRACE_WITH_ARGS' => function ($value, Settings $settings) {
+            $settings->setEnabled(Settings::BACKTRACE_WITH_ARGS, (bool)$value);
+        },
+        'NOT_UPDATE_RETRY_COUNT' => function ($value, Settings $settings) {
+            $settings->setEnabled(Settings::NOT_UPDATE_RETRY_COUNT, (bool)$value);
+        },
         'LEVELS_NOT_SENDING' => function ($values, Settings $settings) {
             $settings->setLevelsNotSending($values ?: []);
         },
@@ -113,6 +119,33 @@ $arTabs = [
                     LogLevel::WARNING => LogLevel::WARNING,
                 ],
                 'SELECTED_VALUES' => $settings->getLevelsNotSending()
+            ],
+        ]
+    ],
+    [
+        'DIV' => 'tab_2',
+        'TAB' => 'Доп. настройки',
+        'FIELDS' => [
+            'BACKTRACE_WITH_ARGS' => [
+                'TYPE' => 'checkbox',
+                'TITLE' => 'Сохранять аргументы в бектрейсе',
+                'VALUE' => $settings->isEnabled(Settings::BACKTRACE_WITH_ARGS)
+            ],
+            'BACKTRACE_WITH_ARGS_HR' => [
+                'TYPE' => 'hr',
+            ],
+
+            'NOT_UPDATE_RETRY_COUNT' => [
+                'TYPE' => 'checkbox',
+                'TITLE' => 'Не обновлять кол-во повторов',
+                'VALUE' => $settings->isEnabled(Settings::NOT_UPDATE_RETRY_COUNT)
+            ],
+            'NOT_UPDATE_RETRY_COUNT_INFO' => [
+                'TYPE' => 'info',
+                'TITLE' => 'Экономит 2 запроса к БД на одной ошибке',
+            ],
+            'NOT_UPDATE_RETRY_COUNT_HR' => [
+                'TYPE' => 'hr',
             ],
         ]
     ],

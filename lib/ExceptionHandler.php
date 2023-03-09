@@ -20,8 +20,9 @@ class ExceptionHandler extends ExceptionHandlerLog
         $moduleId = 'rdn.error';
 
         if (Loader::includeModule($moduleId)) {
+            $settings = new Settings();
 
-            $context = false // TODO - Вынести в настройки
+            $context = $settings->isEnabled(Settings::BACKTRACE_WITH_ARGS)
                 ? $exception->getTrace()
                 : $this->traceToArray($exception->getTraceAsString());
 
@@ -67,7 +68,7 @@ class ExceptionHandler extends ExceptionHandlerLog
             }
         );
 
-        if (false) { // TODO - Вынести в настройки
+        if (false) { // TODO - Нужно ? Вынести в настройки : убрать
             return $data;
         } else {
             return empty($_SERVER['DOCUMENT_ROOT'])
