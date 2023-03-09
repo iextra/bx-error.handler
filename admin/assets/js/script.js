@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 const RdnErrorLog = {
-    openModal: function (data, title) {
+    openModal: function (data, id, title) {
         const popup = BX.PopupWindowManager.create(
-            "popup-message",
-            BX('element'),
+            "rdn_error_log_detail_" + id,
+            null,
             {
                 content: data,
                 width: 900, // ширина окна
@@ -58,16 +58,16 @@ const RdnErrorLog = {
                 id: id
             }
         }).then(function (response) {
-            RdnErrorLog.openModal(response.data.html, 'Подробно');
-        },
-        function (response) {
+                RdnErrorLog.openModal(response.data.html, id, 'Подробно');
+            },
+            function (response) {
 
-            let data = '';
-            response.errors.forEach(function (item) {
-                data += '<p>' + item.message + '</p>';
+                let data = '';
+                response.errors.forEach(function (item) {
+                    data += '<p>' + item.message + '</p>';
+                });
+
+                RdnErrorLog.openModal('<div class="internal-error">' + data + '</div>',  id, 'Ошибка!');
             });
-
-            RdnErrorLog.openModal('<div class="internal-error">' + data + '</div>', 'Ошибка!');
-        });
     }
 };

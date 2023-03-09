@@ -1,10 +1,17 @@
 /* Log page */
 .error-detail-table.border-1 {border-collapse: collapse; border: 1px #cecccc solid;}
-.error-detail-table td {padding: 5px; vertical-align: top;}
+.error-detail-table td {padding: 5px; vertical-align: top; border: 1px #cecccc solid;}
+.error-detail-table tr {border: 1px #cecccc solid}
 .error-detail-table td:first-child {text-align: right; color: #607d8b;}
 .error-detail-table pre {margin: 0;}
 .error-detail-table .error-dump pre {display: none;}
 .error-detail-table .error-dump.show pre {display: block;}
+.error-detail-table td:first-child {
+    min-width: 120px;
+}
+.error-detail-table td:last-child {
+    width: 100%;
+}
 .internal-error {color: red;}
 .error-level-critical {color: #f800e3;}
 .error-level-error {color: #ff0018;}

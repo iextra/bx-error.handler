@@ -125,12 +125,12 @@ class GridHelper
         return [
             LogLevel::CRITICAL => LogLevel::CRITICAL,
             LogLevel::ERROR => LogLevel::ERROR,
-            LogLevel::EMERGENCY => LogLevel::EMERGENCY,
             LogLevel::WARNING => LogLevel::WARNING,
-            LogLevel::NOTICE => LogLevel::NOTICE,
-            LogLevel::ALERT => LogLevel::ALERT,
-            LogLevel::INFO => LogLevel::INFO,
-            LogLevel::DEBUG => LogLevel::DEBUG,
+            //LogLevel::EMERGENCY => LogLevel::EMERGENCY,
+            //LogLevel::NOTICE => LogLevel::NOTICE,
+            //LogLevel::ALERT => LogLevel::ALERT,
+            //LogLevel::INFO => LogLevel::INFO,
+            //LogLevel::DEBUG => LogLevel::DEBUG,
         ];
     }
 

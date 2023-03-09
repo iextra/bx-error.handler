@@ -111,11 +111,6 @@ $arTabs = [
                     LogLevel::CRITICAL => LogLevel::CRITICAL,
                     LogLevel::ERROR => LogLevel::ERROR,
                     LogLevel::WARNING => LogLevel::WARNING,
-                    LogLevel::ALERT => LogLevel::ALERT,
-                    LogLevel::EMERGENCY => LogLevel::EMERGENCY,
-                    LogLevel::NOTICE => LogLevel::NOTICE,
-                    LogLevel::INFO => LogLevel::INFO,
-                    LogLevel::DEBUG => LogLevel::DEBUG,
                 ],
                 'SELECTED_VALUES' => $settings->getLevelsNotSending()
             ],

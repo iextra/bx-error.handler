@@ -170,7 +170,6 @@ $APPLICATION->IncludeComponent(
         'AJAX_MODE' => 'Y',
         'AJAX_ID' => CAjax::getComponentID('bitrix:main.ui.grid', '.default', ''),
         'PAGE_SIZES' => [
-            ['NAME' => '1', 'VALUE' => '1'],
             ['NAME' => '10', 'VALUE' => '10'],
             ['NAME' => '20', 'VALUE' => '20'],
             ['NAME' => '50', 'VALUE' => '50'],
