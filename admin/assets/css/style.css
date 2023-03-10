@@ -21,6 +21,11 @@
 .error-level-alert {color: #2196f3;}
 .error-level-debug {color: #6c757d;}
 
+.code-container {
+    background: #ffd5071c;
+    padding: 10px 15px;
+}
+
 /* Setting page */
 .switch-btn {
     display: inline-block;

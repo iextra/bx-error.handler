@@ -36,7 +36,7 @@ class Manager
 
         if ($this->settings->isEnabled(Settings::EMAIL_NOTICE)) {
             $mailSender = new Email($this->settings);
-            $mailSender->send($level, $message, $context, $tag);
+            $mailSender->send($level, $message, new StringableArray($context), $tag);
         }
     }
 }

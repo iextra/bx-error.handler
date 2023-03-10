@@ -14,12 +14,14 @@ class Settings
     public const TELEGRAM_NOTICE = 'TELEGRAM_NOTICE';
     public const EMAIL_NOTICE = 'EMAIL_NOTICE';
     public const BACKTRACE_WITH_ARGS = 'BACKTRACE_WITH_ARGS';
-    public const NOT_UPDATE_RETRY_COUNT = 'NOT_UPDATE_RETRY_COUNT';
+    public const UPDATE_RETRY_COUNT = 'UPDATE_RETRY_COUNT';
 
     protected const MODULE_ID = 'rdn.error';
     protected const SETTINGS_KEY = 'settings';
 
-    protected array $isEnabled = [];
+    protected array $isEnabled = [
+        self::UPDATE_RETRY_COUNT => 'Y'
+    ];
     protected array $levelsNotSending = [];
     protected string $adminSectionAlertMessage;
     protected string $loggerType;

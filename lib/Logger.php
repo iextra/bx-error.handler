@@ -17,6 +17,10 @@ class Logger
         ?string $tag = null
     ): void
     {
+        if (defined('RDN_STOP_ERROR_LOG')) {
+            return;
+        }
+
         $settings = new Settings();
 
         $logger = match ($settings->getLoggerType()) {

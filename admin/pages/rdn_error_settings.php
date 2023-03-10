@@ -44,8 +44,8 @@ if (
         'BACKTRACE_WITH_ARGS' => function ($value, Settings $settings) {
             $settings->setEnabled(Settings::BACKTRACE_WITH_ARGS, (bool)$value);
         },
-        'NOT_UPDATE_RETRY_COUNT' => function ($value, Settings $settings) {
-            $settings->setEnabled(Settings::NOT_UPDATE_RETRY_COUNT, (bool)$value);
+        'UPDATE_RETRY_COUNT' => function ($value, Settings $settings) {
+            $settings->setEnabled(Settings::UPDATE_RETRY_COUNT, (bool)$value);
         },
         'LEVELS_NOT_SENDING' => function ($values, Settings $settings) {
             $settings->setLevelsNotSending($values ?: []);
@@ -65,7 +65,7 @@ if (
 $arTabs = [
     [
         'DIV' => 'tab_1',
-        'TAB' => 'Настройки',
+        'TAB' => 'Настройки уведомлений',
         'FIELDS' => [
             'ADMIN_NOTICE' => [
                 'TYPE' => 'checkbox',
@@ -128,25 +128,36 @@ $arTabs = [
         'FIELDS' => [
             'BACKTRACE_WITH_ARGS' => [
                 'TYPE' => 'checkbox',
-                'TITLE' => 'Сохранять аргументы в бектрейсе',
+                'TITLE' => 'Развернутое логирование',
                 'VALUE' => $settings->isEnabled(Settings::BACKTRACE_WITH_ARGS)
             ],
+            'BACKTRACE_WITH_ARGS_INFO' => [
+                'TYPE' => 'info',
+                'TEXT' => 'При обработке исключений сохранятся входящие аргументы функций.
+                <br><span class="red">Внимание!</span> 
+                Дунную опцию стоит включать только по не обходимости.
+                <br>[в случае есть функция принимает объкты, логи могут быть очень тяжелыми]</span>',
+            ],
+
+            /*
             'BACKTRACE_WITH_ARGS_HR' => [
                 'TYPE' => 'hr',
             ],
 
-            'NOT_UPDATE_RETRY_COUNT' => [
+
+            'UPDATE_RETRY_COUNT' => [
                 'TYPE' => 'checkbox',
-                'TITLE' => 'Не обновлять кол-во повторов',
-                'VALUE' => $settings->isEnabled(Settings::NOT_UPDATE_RETRY_COUNT)
+                'TITLE' => 'Записывать кол-во повторов',
+                'VALUE' => $settings->isEnabled(Settings::UPDATE_RETRY_COUNT)
             ],
-            'NOT_UPDATE_RETRY_COUNT_INFO' => [
+            'UPDATE_RETRY_COUNT_INFO' => [
                 'TYPE' => 'info',
-                'TITLE' => 'Экономит 2 запроса к БД на одной ошибке',
+                'TEXT' => 'При отключении опции экономится 2 запроса к БД',
             ],
-            'NOT_UPDATE_RETRY_COUNT_HR' => [
+            'UPDATE_RETRY_COUNT_HR' => [
                 'TYPE' => 'hr',
             ],
+            */
         ]
     ],
 ];
